@@ -12,7 +12,7 @@ export function Faq() {
     },
     {
       q: "How does the GPS check-in work?",
-      a: "You capture each site's location by standing on-site and tapping \u201cUse my location\u201d, then set a radius in metres. When a worker clocks in, SiteClockr takes a fresh GPS fix and checks they're inside the boundary before recording the time.",
+      a: `You set each site's location however suits — your phone's GPS on-site, a point on the map, or ${c.locationLookup} — then choose a radius in metres. When a worker clocks in, SiteClockr takes a fresh GPS fix and checks they're inside the boundary before recording the time.`,
     },
     {
       q: c.faqSafetyQ,

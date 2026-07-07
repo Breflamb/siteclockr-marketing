@@ -1,22 +1,28 @@
-const steps = [
-  {
-    n: "01",
-    title: "Set up your sites",
-    body: "Add each site, then stand on-site and capture its geofence with a tap, or print a QR code for the gate. Invite your workers by link — no app store download required.",
-  },
-  {
-    n: "02",
-    title: "The crew clocks in",
-    body: "Workers open SiteClockr on their phone and clock in. Location is verified against the geofence, and their SafePass status is checked on the spot.",
-  },
-  {
-    n: "03",
-    title: "You get the records",
-    body: "Hours build into weekly timesheets, compliance is tracked automatically, and reminders go out before any certificate expires. Export for payroll when ready.",
-  },
-];
+"use client";
+
+import { useCountry } from "@/components/CountryContext";
 
 export function HowItWorks() {
+  const { c } = useCountry();
+
+  const steps = [
+    {
+      n: "01",
+      title: "Set up your sites",
+      body: `Add each site and set its location from your GPS on-site, a pin on the map, or ${c.locationLookup}, then set the geofence radius — or just print a QR code for the gate. Invite your workers by link, no app store download required.`,
+    },
+    {
+      n: "02",
+      title: "The crew clocks in",
+      body: `Workers open SiteClockr on their phone and clock in. Location is verified against the geofence, and their ${c.safetyCardShort} status is checked on the spot.`,
+    },
+    {
+      n: "03",
+      title: "You get the records",
+      body: "Hours build into weekly timesheets, compliance is tracked automatically, and reminders go out before any certificate expires. Export for payroll when ready.",
+    },
+  ];
+
   return (
     <section id="how-it-works" className="scroll-mt-20 border-y border-line bg-brand-tint/40">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:py-28">

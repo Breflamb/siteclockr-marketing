@@ -17,7 +17,7 @@ export function Features() {
     {
       icon: PinIcon,
       title: "GPS geofenced clock-in",
-      body: "Stand on the site, tap to capture the location and set a radius. Every clock-in needs a live GPS fix and is checked against the site boundary before the time is recorded.",
+      body: `Set each site's location from your phone's GPS on-site, a pin on the map, or ${c.locationLookup} — then set the radius. Every clock-in needs a live GPS fix inside the boundary before the time is recorded.`,
     },
     {
       icon: QrIcon,

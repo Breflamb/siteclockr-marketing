@@ -11,6 +11,9 @@ export interface CountryContent {
   safetyCard: string; // full name, e.g. "SafePass"
   safetyCardShort: string; // short, e.g. "SafePass" / "CSCS"
 
+  // Site geofence location lookup, e.g. "an Eircode" / "a UK postcode"
+  locationLookup: string;
+
   // Hero
   heroSubhead: string;
   heroSafetyRowLabel: string; // label in the hero mock card
@@ -46,6 +49,7 @@ export const COUNTRIES: Record<CountryCode, CountryContent> = {
     flag: "🇮🇪",
     safetyCard: "SafePass",
     safetyCardShort: "SafePass",
+    locationLookup: "an Eircode",
     heroSubhead:
       "SiteClockr turns any phone into a site clock. GPS-geofenced check-ins, printable QR sign-in points, and SafePass & manual-handling tracking with automatic expiry reminders — plus a live on-site view and CSV payroll exports.",
     heroSafetyRowLabel: "SafePass",
@@ -64,9 +68,9 @@ export const COUNTRIES: Record<CountryCode, CountryContent> = {
       "Every check-in is time-stamped and location-verified",
     ],
     complianceRegisterExpLabel: "SafePass exp",
-    addressFeatureTitle: "Eircode address autofill",
+    addressFeatureTitle: "Eircode-powered setup",
     addressFeatureBody:
-      "Set your company address in seconds from an Eircode, so it shows correctly on clock-in pages and QR printouts.",
+      "Autofill your company address and drop a site's geofence straight from an Eircode — no fiddling with coordinates.",
     themesFeatureBody:
       "Brand every screen with your logo and a colour palette: 10 standard themes plus all 32 GAA county colours.",
     pricingSafetyLine: "SafePass & manual-handling tracking",
@@ -82,6 +86,7 @@ export const COUNTRIES: Record<CountryCode, CountryContent> = {
     flag: "🇬🇧",
     safetyCard: "CSCS card",
     safetyCardShort: "CSCS",
+    locationLookup: "a UK postcode",
     heroSubhead:
       "SiteClockr turns any phone into a site clock. GPS-geofenced check-ins, printable QR sign-in points, and CSCS card & manual-handling tracking with automatic expiry reminders — plus a live on-site view and CSV payroll exports.",
     heroSafetyRowLabel: "CSCS",
@@ -100,9 +105,9 @@ export const COUNTRIES: Record<CountryCode, CountryContent> = {
       "Every check-in is time-stamped and location-verified",
     ],
     complianceRegisterExpLabel: "CSCS exp",
-    addressFeatureTitle: "UK postcode support",
+    addressFeatureTitle: "Postcode & map setup",
     addressFeatureBody:
-      "Enter your company address with UK postcode formatting, so it shows correctly on clock-in pages and QR printouts.",
+      "Set a site's geofence straight from a UK postcode or by dropping a pin on the map — then just set the radius.",
     themesFeatureBody:
       "Brand every screen with your logo and a choice of colour palettes to match your company.",
     pricingSafetyLine: "CSCS & manual-handling tracking",
