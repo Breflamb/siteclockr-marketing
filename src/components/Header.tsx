@@ -6,7 +6,7 @@ import { CountrySelect } from "@/components/CountryContext";
 export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-white/85 backdrop-blur">
-      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:px-6">
+      <div className="mx-auto flex h-24 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link href="/" aria-label={`${site.name} home`} className="shrink-0">
           <Logo />
         </Link>
