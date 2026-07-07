@@ -1,28 +1,21 @@
+"use client";
+
 import { site } from "@/lib/site";
 import { CheckIcon } from "@/components/icons";
-
-const points = [
-  "Store SafePass number, expiry and front/back card photos against each worker",
-  "Take a photo of the card and it reads the number and expiry for you",
-  "Manual-handling certificates tracked the same way",
-  "Automatic email reminders before anything expires",
-  "See at a glance who is out of date before they reach the gate",
-  "Every check-in is time-stamped and location-verified",
-];
+import { useCountry } from "@/components/CountryContext";
 
 export function Compliance() {
+  const { c } = useCountry();
+  const points = c.compliancePoints;
   return (
     <section id="compliance" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-20 sm:px-6 lg:py-28">
       <div className="grid items-center gap-14 lg:grid-cols-2">
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide text-brand">Compliance, handled</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            Never let an expired SafePass onto site again
+            {c.complianceHeading}
           </h2>
-          <p className="mt-4 text-lg text-muted">
-            SiteClockr keeps a live register of every worker&apos;s qualifications and warns
-            you well before they lapse — protecting your team and your compliance record.
-          </p>
+          <p className="mt-4 text-lg text-muted">{c.complianceIntro}</p>
 
           <ul className="mt-8 space-y-3">
             {points.map((p) => (
@@ -65,7 +58,7 @@ export function Compliance() {
                   >
                     {row.status}
                   </span>
-                  <p className="mt-1 text-xs text-muted">SafePass exp {row.exp}</p>
+                  <p className="mt-1 text-xs text-muted">{c.complianceRegisterExpLabel} {row.exp}</p>
                 </div>
               </div>
             ))}

@@ -1,60 +1,65 @@
+"use client";
+
 import { site } from "@/lib/site";
 import { CheckIcon } from "@/components/icons";
-
-const tiers = [
-  {
-    name: "Sole Trader",
-    price: "Free",
-    period: "forever",
-    blurb: "For a one-person operation getting off paper.",
-    features: [
-      "1 login user",
-      "1 active site (switch sites with a 24h cooldown)",
-      "1 worker",
-      "GPS & QR clock-in",
-      "Weekly CSV timesheets",
-    ],
-    cta: "Start free",
-    href: site.signupUrl,
-    featured: false,
-  },
-  {
-    name: "Starter",
-    price: "21-day free trial",
-    period: "no card required",
-    blurb: "For a growing contractor running a few sites.",
-    features: [
-      "Up to 3 active sites",
-      "25 workers included",
-      "+\u20ac1.50/mo per extra worker",
-      "SafePass & manual-handling tracking",
-      "Automatic expiry reminders",
-      "Live on-site view & abuse alerts",
-    ],
-    cta: "Start free trial",
-    href: site.signupUrl,
-    featured: true,
-  },
-  {
-    name: "Business",
-    price: "21-day free trial",
-    period: "no card required",
-    blurb: "For established firms with multiple sites.",
-    features: [
-      "Up to 25 active sites",
-      "50 workers included",
-      "+\u20ac1.50/mo per extra worker",
-      "Everything in Starter",
-      "API keys & webhooks",
-      "Full data backups & audit log",
-    ],
-    cta: "Start free trial",
-    href: site.signupUrl,
-    featured: false,
-  },
-];
+import { useCountry } from "@/components/CountryContext";
 
 export function Pricing() {
+  const { c } = useCountry();
+
+  const tiers = [
+    {
+      name: "Sole Trader",
+      price: "Free",
+      period: "forever",
+      blurb: "For a one-person operation getting off paper.",
+      features: [
+        "1 login user",
+        "1 active site (switch sites with a 24h cooldown)",
+        "1 worker",
+        "GPS & QR clock-in",
+        "Weekly CSV timesheets",
+      ],
+      cta: "Start free",
+      href: site.signupUrl,
+      featured: false,
+    },
+    {
+      name: "Starter",
+      price: "21-day free trial",
+      period: "no card required",
+      blurb: "For a growing contractor running a few sites.",
+      features: [
+        "Up to 3 active sites",
+        "25 workers included",
+        "+\u20ac1.50/mo per extra worker",
+        c.pricingSafetyLine,
+        "Automatic expiry reminders",
+        "Live on-site view & abuse alerts",
+      ],
+      cta: "Start free trial",
+      href: site.signupUrl,
+      featured: true,
+    },
+    {
+      name: "Business",
+      price: "21-day free trial",
+      period: "no card required",
+      blurb: "For established firms with multiple sites.",
+      features: [
+        "Up to 25 active sites",
+        "50 workers included",
+        "+\u20ac1.50/mo per extra worker",
+        "Everything in Starter",
+        "API keys & webhooks",
+        "Full data backups & audit log",
+      ],
+      cta: "Start free trial",
+      href: site.signupUrl,
+      featured: false,
+    },
+  ];
+
   return (
     <section id="pricing" className="scroll-mt-20 border-y border-line bg-brand-tint/40">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:py-28">
@@ -112,10 +117,7 @@ export function Pricing() {
           ))}
         </div>
 
-        <p className="mx-auto mt-8 max-w-2xl text-center text-xs text-muted">
-          Prices shown in euro (EUR). Extra workers beyond your plan&apos;s included headcount
-          are billed at €1.50 per active worker per month.
-        </p>
+        <p className="mx-auto mt-8 max-w-2xl text-center text-xs text-muted">{c.currencyNote}</p>
       </div>
     </section>
   );

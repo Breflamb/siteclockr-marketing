@@ -1,7 +1,11 @@
+"use client";
+
 import { site } from "@/lib/site";
 import { CheckIcon, ClockIcon, PinIcon, ShieldIcon } from "@/components/icons";
+import { useCountry } from "@/components/CountryContext";
 
 export function Hero() {
+  const { c } = useCountry();
   return (
     <section className="hero-gradient border-b border-line">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:py-28">
@@ -18,11 +22,7 @@ export function Hero() {
             </span>
           </h1>
 
-          <p className="mt-5 max-w-xl text-lg text-muted">
-            {site.name} turns any phone into a site clock. GPS-geofenced check-ins,
-            printable QR sign-in points, and SafePass &amp; manual-handling tracking with
-            automatic expiry reminders — plus a live on-site view and CSV payroll exports.
-          </p>
+          <p className="mt-5 max-w-xl text-lg text-muted">{c.heroSubhead}</p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
@@ -72,7 +72,7 @@ export function Hero() {
             </div>
 
             <div className="mt-4 space-y-3">
-              <MockRow icon={<ShieldIcon className="h-4 w-4" />} label="SafePass" value="Valid · exp 06/2028" ok />
+              <MockRow icon={<ShieldIcon className="h-4 w-4" />} label={c.heroSafetyRowLabel} value="Valid · exp 06/2028" ok />
               <MockRow icon={<ShieldIcon className="h-4 w-4" />} label="Manual handling" value="Valid · exp 03/2027" ok />
               <MockRow icon={<ClockIcon className="h-4 w-4" />} label="This week" value="38h 15m" />
             </div>

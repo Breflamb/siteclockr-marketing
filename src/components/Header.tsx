@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { nav, site } from "@/lib/site";
+import { CountrySelect } from "@/components/CountryContext";
 
 export function Header() {
   return (
@@ -23,6 +24,7 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
+          <CountrySelect />
           <a
             href={site.loginUrl}
             className="text-sm font-semibold text-ink transition-colors hover:text-brand"
@@ -58,6 +60,9 @@ export function Header() {
               </a>
             ))}
             <div className="my-2 h-px bg-line" />
+            <div className="px-3 py-2">
+              <CountrySelect className="w-full [&_select]:w-full" />
+            </div>
             <a href={site.loginUrl} className="block rounded-lg px-3 py-2 text-sm font-semibold text-ink hover:bg-brand-tint">
               Log in
             </a>
