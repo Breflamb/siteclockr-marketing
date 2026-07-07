@@ -6,10 +6,12 @@ import { MoreFeatures } from "@/components/sections/MoreFeatures";
 import { Pricing } from "@/components/sections/Pricing";
 import { Faq } from "@/components/sections/Faq";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { JsonLd } from "@/components/JsonLd";
 
 export default function Home() {
   return (
     <>
+      <JsonLd />
       <Hero />
       <Features />
       <HowItWorks />

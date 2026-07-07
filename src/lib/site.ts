@@ -10,7 +10,7 @@ export const site = {
   contactEmail: "hello@siteclockr.com",
   tagline: "Time & attendance, built for the site.",
   description:
-    "SiteClockr is GPS and QR-based time tracking for construction and field teams — geofenced clock-ins, SafePass & manual-handling tracking with expiry reminders, timesheets and exports.",
+    "SiteClockr is GPS and QR-based time tracking for construction and field teams in Ireland and Britain. Geofenced clock-ins, SafePass and CSCS tracking with expiry reminders, live on-site views, and CSV payroll exports — free to start.",
 } as const;
 
 export const nav = [
