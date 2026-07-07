@@ -21,6 +21,9 @@ export function Header() {
               {item.label}
             </a>
           ))}
+          <Link href="/blog/" className="text-sm font-medium text-muted transition-colors hover:text-brand">
+            Blog
+          </Link>
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
@@ -65,6 +68,12 @@ export function Header() {
                 {item.label}
               </a>
             ))}
+            <Link
+              href="/blog/"
+              className="block rounded-lg px-3 py-2 text-sm font-medium text-ink hover:bg-brand-tint"
+            >
+              Blog
+            </Link>
             <div className="my-2 h-px bg-line" />
             <div className="px-3 py-2">
               <CountrySelect className="w-full [&_select]:w-full" />
