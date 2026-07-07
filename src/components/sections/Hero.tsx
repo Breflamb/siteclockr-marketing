@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { site } from "@/lib/site";
 import { CheckIcon, ClockIcon, PinIcon, ShieldIcon, UsersIcon } from "@/components/icons";
 import { useCountry } from "@/components/CountryContext";
@@ -23,6 +24,15 @@ export function Hero() {
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:py-28">
         <div>
+          <Image
+            src="/brand/logo-white.png"
+            alt={`${site.name} logo`}
+            width={1204}
+            height={450}
+            priority
+            className="mb-7 h-16 w-auto drop-shadow-lg sm:h-20"
+          />
+
           <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
             <span className="h-2 w-2 rounded-full bg-brand-accent" />
             Time &amp; attendance for construction
