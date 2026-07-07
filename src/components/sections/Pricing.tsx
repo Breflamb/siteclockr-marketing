@@ -12,6 +12,7 @@ export function Pricing() {
       name: "Sole Trader",
       price: "Free",
       period: "forever",
+      trialNote: "",
       blurb: "For a one-person operation getting off paper.",
       features: [
         "1 login user",
@@ -26,8 +27,9 @@ export function Pricing() {
     },
     {
       name: "Starter",
-      price: "21-day free trial",
-      period: "no card required",
+      price: "\u20ac29",
+      period: "/ month",
+      trialNote: "21-day free trial \u00b7 no card required",
       blurb: "For a growing contractor running a few sites.",
       features: [
         "Up to 3 active sites",
@@ -43,8 +45,9 @@ export function Pricing() {
     },
     {
       name: "Business",
-      price: "21-day free trial",
-      period: "no card required",
+      price: "\u20ac59",
+      period: "/ month",
+      trialNote: "21-day free trial \u00b7 no card required",
       blurb: "For established firms with multiple sites.",
       features: [
         "Up to 25 active sites",
@@ -69,8 +72,8 @@ export function Pricing() {
             Start free. Upgrade when the crew grows.
           </h2>
           <p className="mt-4 text-lg text-muted">
-            Sole Trader is free forever. Paid plans come with a 21-day free trial — no card
-            required — then a simple monthly plan billed in euro. Cancel anytime.
+            Sole Trader is free forever. Paid plans start at €29/month with a 21-day free trial —
+            no card required — and are billed in euro. Cancel anytime.
           </p>
         </div>
 
@@ -89,9 +92,12 @@ export function Pricing() {
               )}
               <h3 className="text-lg font-semibold text-ink">{tier.name}</h3>
               <p className="mt-2 flex flex-wrap items-baseline gap-x-2">
-                <span className="text-3xl font-extrabold text-ink">{tier.price}</span>
+                <span className="text-4xl font-extrabold text-ink">{tier.price}</span>
                 <span className="text-sm text-muted">{tier.period}</span>
               </p>
+              {tier.trialNote && (
+                <p className="mt-1 text-sm font-medium text-brand">{tier.trialNote}</p>
+              )}
               <p className="mt-2 text-sm text-muted">{tier.blurb}</p>
 
               <ul className="mt-6 space-y-3">

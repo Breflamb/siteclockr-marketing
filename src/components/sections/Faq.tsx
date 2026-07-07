@@ -32,7 +32,7 @@ export function Faq() {
     },
     {
       q: "What does it cost to get started?",
-      a: "The Sole Trader plan is free forever. Starter and Business come with a 21-day free trial with no card required — after that they're a simple monthly plan in euro, and you can cancel anytime.",
+      a: "The Sole Trader plan is free forever. Starter is €29/month and Business is €59/month, each with a 21-day free trial and no card required — after that it's a simple monthly plan in euro, and you can cancel anytime.",
     },
     {
       q: "Is my data protected?",
