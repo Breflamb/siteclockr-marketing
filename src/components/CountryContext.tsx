@@ -32,10 +32,6 @@ export function CountryProvider({ children }: { children: React.ReactNode }) {
     } catch {
       // ignore storage errors
     }
-    if (!next) {
-      const lang = navigator.language || "";
-      if (/-GB\b/i.test(lang) || lang.toLowerCase() === "en-gb") next = "GB";
-    }
     if (next && next !== country) setCountryState(next);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

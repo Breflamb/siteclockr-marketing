@@ -26,6 +26,12 @@ export function Header() {
         <div className="hidden items-center gap-3 md:flex">
           <CountrySelect />
           <a
+            href={`mailto:${site.contactEmail}`}
+            className="text-sm font-semibold text-ink transition-colors hover:text-brand"
+          >
+            Contact
+          </a>
+          <a
             href={site.loginUrl}
             className="text-sm font-semibold text-ink transition-colors hover:text-brand"
           >
@@ -63,6 +69,12 @@ export function Header() {
             <div className="px-3 py-2">
               <CountrySelect className="w-full [&_select]:w-full" />
             </div>
+            <a
+              href={`mailto:${site.contactEmail}`}
+              className="block rounded-lg px-3 py-2 text-sm font-semibold text-ink hover:bg-brand-tint"
+            >
+              Contact
+            </a>
             <a href={site.loginUrl} className="block rounded-lg px-3 py-2 text-sm font-semibold text-ink hover:bg-brand-tint">
               Log in
             </a>
