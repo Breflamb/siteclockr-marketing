@@ -10,6 +10,8 @@ export const site = {
   contactEmail: "hello@siteclockr.com",
   /** Paste the content value from Google Search Console → HTML tag method (optional). */
   googleSiteVerification: "cwNPw4-RUsXxJ2NwT-HVfbVkDe4inJLho-sXlmZAzjQ",
+  /** Google Analytics 4 measurement ID (G-XXXXXXXXXX). Leave empty to disable. */
+  gaMeasurementId: "",
   tagline: "Time & attendance, built for the site.",
   description:
     "SiteClockr is GPS and QR-based time tracking for construction and field teams in Ireland and Britain. Geofenced clock-ins, SafePass and CSCS tracking with expiry reminders, live on-site views, and CSV payroll exports — free to start.",
