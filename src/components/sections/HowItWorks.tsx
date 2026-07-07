@@ -2,7 +2,7 @@ const steps = [
   {
     n: "01",
     title: "Set up your sites",
-    body: "Add each site and draw its geofence on the map, or print a QR code for the gate. Invite your workers by link — no app store download required.",
+    body: "Add each site, then stand on-site and capture its geofence with a tap, or print a QR code for the gate. Invite your workers by link — no app store download required.",
   },
   {
     n: "02",

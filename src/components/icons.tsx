@@ -95,3 +95,50 @@ export function PhoneIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function UsersIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <circle cx="9" cy="8" r="3" />
+      <path d="M3 20c0-3.3 2.7-5 6-5s6 1.7 6 5" />
+      <path d="M16 5.5a3 3 0 0 1 0 5.4M21 20c0-2.6-1.6-4.3-4-4.8" />
+    </svg>
+  );
+}
+
+export function CodeIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="m8 8-4 4 4 4M16 8l4 4-4 4M13 6l-2 12" />
+    </svg>
+  );
+}
+
+export function PaletteIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M12 3a9 9 0 1 0 0 18c1.4 0 2-1 2-2 0-1.4-1-1.6-1-2.6 0-.8.7-1.4 1.6-1.4H17a4 4 0 0 0 4-4c0-4.4-4-8-9-8Z" />
+      <circle cx="7.5" cy="10.5" r="1" />
+      <circle cx="12" cy="7.5" r="1" />
+      <circle cx="16.5" cy="10.5" r="1" />
+    </svg>
+  );
+}
+
+export function EditIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M4 20h4L20 8l-4-4L4 16v4Z" />
+      <path d="m14 6 4 4" />
+    </svg>
+  );
+}
+
+export function DownloadIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M12 3v12m0 0 4-4m-4 4-4-4" />
+      <path d="M4 21h16" />
+    </svg>
+  );
+}

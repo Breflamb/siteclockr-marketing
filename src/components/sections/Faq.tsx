@@ -1,27 +1,35 @@
 const faqs = [
   {
     q: "Do workers need to download an app?",
-    a: "No. SiteClockr runs in the phone's web browser, so there's nothing to install from an app store. Workers just open a link and clock in.",
+    a: "No. SiteClockr runs in the phone's web browser, so there's nothing to install from an app store. Workers open a link or scan a site QR code and clock in.",
   },
   {
     q: "How does the GPS check-in work?",
-    a: "You draw a geofence around each site. When a worker clocks in, SiteClockr confirms their phone is inside that boundary before recording the time, so you know they were actually on site.",
+    a: "You capture each site's location by standing on-site and tapping \u201cUse my location\u201d, then set a radius in metres. When a worker clocks in, SiteClockr takes a fresh GPS fix and checks they're inside the boundary before recording the time.",
   },
   {
     q: "How is SafePass tracked?",
-    a: "You can store each worker's SafePass number, expiry and a photo of the card. Scanning the card reads the expiry automatically, and SiteClockr sends email reminders before it lapses.",
+    a: "You store each worker's SafePass number, expiry and photos of the card. Taking a photo of the card reads the number and expiry for you, and SiteClockr emails reminders before it lapses. Manual-handling certificates are tracked the same way.",
   },
   {
-    q: "Can I run more than one company or site?",
-    a: "Yes. SiteClockr is multi-site and multi-organisation, so you can manage every site, role and worker from a single dashboard.",
+    q: "Can I see who's on site right now?",
+    a: "Yes. The admin dashboard has a live \u201ccurrently clocked in\u201d view with a running count you can filter by site or name, so you can tell at a glance who is where.",
   },
   {
-    q: "Is my data protected?",
-    a: "Yes. Data is stored securely and the platform is built with GDPR in mind. You stay in control of your workers' information.",
+    q: "Does it connect to payroll or other systems?",
+    a: "You can export weekly timesheets to CSV for any payroll system, download full data backups as JSON or CSV, and use API keys and webhooks so other tools can read your sites and clock-in status and receive clock-in/out events.",
+  },
+  {
+    q: "Can I run more than one site or company?",
+    a: "Yes. SiteClockr is multi-site and multi-company. Your plan sets how many active sites and workers are included, and you can add extra workers for €1.50 each per month.",
   },
   {
     q: "What does it cost to get started?",
-    a: "You can start for free with a single crew and upgrade when you need compliance tracking and multiple sites.",
+    a: "The Sole Trader plan is free forever. Starter and Business come with a 21-day free trial with no card required — after that they're a simple monthly plan in euro, and you can cancel anytime.",
+  },
+  {
+    q: "Is my data protected?",
+    a: "Yes. Data is stored securely, the platform is built with GDPR in mind, and you can download a complete backup of your organisation at any time. You stay in control of your workers' information.",
   },
 ];
 

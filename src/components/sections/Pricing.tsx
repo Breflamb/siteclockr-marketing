@@ -3,39 +3,53 @@ import { CheckIcon } from "@/components/icons";
 
 const tiers = [
   {
-    name: "Starter",
+    name: "Sole Trader",
     price: "Free",
-    period: "",
-    blurb: "For a single crew getting off paper.",
-    features: ["1 site", "Up to 10 workers", "GPS & QR clock-in", "Weekly timesheets"],
+    period: "forever",
+    blurb: "For a one-person operation getting off paper.",
+    features: [
+      "1 login user",
+      "1 active site (switch sites with a 24h cooldown)",
+      "1 worker",
+      "GPS & QR clock-in",
+      "Weekly CSV timesheets",
+    ],
     cta: "Start free",
     href: site.signupUrl,
     featured: false,
   },
   {
-    name: "Crew",
-    price: "€2",
-    period: "/ worker / mo",
-    blurb: "For growing contractors running multiple sites.",
+    name: "Starter",
+    price: "21-day free trial",
+    period: "no card required",
+    blurb: "For a growing contractor running a few sites.",
     features: [
-      "Unlimited sites",
+      "Up to 3 active sites",
+      "25 workers included",
+      "+\u20ac1.50/mo per extra worker",
       "SafePass & manual-handling tracking",
       "Automatic expiry reminders",
-      "Payroll exports",
-      "Email support",
+      "Live on-site view & abuse alerts",
     ],
     cta: "Start free trial",
     href: site.signupUrl,
     featured: true,
   },
   {
-    name: "Enterprise",
-    price: "Let's talk",
-    period: "",
-    blurb: "For larger firms with custom needs.",
-    features: ["Everything in Crew", "Custom roles & branding", "API access", "Priority support"],
-    cta: "Contact sales",
-    href: `mailto:${site.contactEmail}`,
+    name: "Business",
+    price: "21-day free trial",
+    period: "no card required",
+    blurb: "For established firms with multiple sites.",
+    features: [
+      "Up to 25 active sites",
+      "50 workers included",
+      "+\u20ac1.50/mo per extra worker",
+      "Everything in Starter",
+      "API keys & webhooks",
+      "Full data backups & audit log",
+    ],
+    cta: "Start free trial",
+    href: site.signupUrl,
     featured: false,
   },
 ];
@@ -47,10 +61,11 @@ export function Pricing() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wide text-brand">Pricing</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            Simple pricing that scales with the crew
+            Start free. Upgrade when the crew grows.
           </h2>
           <p className="mt-4 text-lg text-muted">
-            Start free, upgrade when you need compliance tracking and multiple sites. Indicative pricing — cancel anytime.
+            Sole Trader is free forever. Paid plans come with a 21-day free trial — no card
+            required — then a simple monthly plan billed in euro. Cancel anytime.
           </p>
         </div>
 
@@ -68,8 +83,8 @@ export function Pricing() {
                 </span>
               )}
               <h3 className="text-lg font-semibold text-ink">{tier.name}</h3>
-              <p className="mt-2 flex items-baseline gap-1">
-                <span className="text-4xl font-extrabold text-ink">{tier.price}</span>
+              <p className="mt-2 flex flex-wrap items-baseline gap-x-2">
+                <span className="text-3xl font-extrabold text-ink">{tier.price}</span>
                 <span className="text-sm text-muted">{tier.period}</span>
               </p>
               <p className="mt-2 text-sm text-muted">{tier.blurb}</p>
@@ -96,6 +111,11 @@ export function Pricing() {
             </div>
           ))}
         </div>
+
+        <p className="mx-auto mt-8 max-w-2xl text-center text-xs text-muted">
+          Prices shown in euro (EUR). Extra workers beyond your plan&apos;s included headcount
+          are billed at €1.50 per active worker per month.
+        </p>
       </div>
     </section>
   );

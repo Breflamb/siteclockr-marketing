@@ -2,8 +2,8 @@ import { site } from "@/lib/site";
 import { CheckIcon } from "@/components/icons";
 
 const points = [
-  "Store SafePass number, expiry and card photos against each worker",
-  "Card scanning reads the expiry date for you — no manual typing",
+  "Store SafePass number, expiry and front/back card photos against each worker",
+  "Take a photo of the card and it reads the number and expiry for you",
   "Manual-handling certificates tracked the same way",
   "Automatic email reminders before anything expires",
   "See at a glance who is out of date before they reach the gate",

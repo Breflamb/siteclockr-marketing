@@ -19,9 +19,9 @@ export function Hero() {
           </h1>
 
           <p className="mt-5 max-w-xl text-lg text-muted">
-            {site.name} turns any phone into a site clock. GPS-geofenced check-ins, QR
-            sign-in points, and automatic SafePass &amp; manual-handling tracking — so
-            timesheets and compliance take care of themselves.
+            {site.name} turns any phone into a site clock. GPS-geofenced check-ins,
+            printable QR sign-in points, and SafePass &amp; manual-handling tracking with
+            automatic expiry reminders — plus a live on-site view and CSV payroll exports.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
