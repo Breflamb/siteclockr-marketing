@@ -1,55 +1,78 @@
 "use client";
 
 import { site } from "@/lib/site";
-import { CheckIcon, ClockIcon, PinIcon, ShieldIcon } from "@/components/icons";
+import { CheckIcon, ClockIcon, PinIcon, ShieldIcon, UsersIcon } from "@/components/icons";
 import { useCountry } from "@/components/CountryContext";
 
 export function Hero() {
   const { c } = useCountry();
   return (
-    <section className="hero-gradient border-b border-line">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:py-28">
+    <section className="brand-gradient relative overflow-hidden text-white">
+      {/* Decorative glows */}
+      <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-brand-mid/40 blur-3xl" />
+      <div aria-hidden className="pointer-events-none absolute -bottom-24 left-1/3 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
+      {/* Dot grid */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.12]"
+        style={{
+          backgroundImage: "radial-gradient(currentColor 1px, transparent 1px)",
+          backgroundSize: "22px 22px",
+        }}
+      />
+
+      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:py-28">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1 text-xs font-semibold text-brand">
-            <span className="h-2 w-2 rounded-full bg-brand-mid" />
-            Time & attendance for construction
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
+            <span className="h-2 w-2 rounded-full bg-brand-accent" />
+            Time &amp; attendance for construction
           </span>
 
-          <h1 className="mt-5 text-4xl font-extrabold leading-tight tracking-tight text-ink sm:text-5xl lg:text-6xl">
+          <h1 className="mt-5 text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
             Clock the crew in.{" "}
-            <span className="bg-gradient-to-r from-brand-deep to-brand-mid bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white to-brand-accent bg-clip-text text-transparent">
               Prove who was on site.
             </span>
           </h1>
 
-          <p className="mt-5 max-w-xl text-lg text-muted">{c.heroSubhead}</p>
+          <p className="mt-6 max-w-xl text-lg text-white/85">{c.heroSubhead}</p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href={site.signupUrl}
-              className="inline-flex items-center justify-center rounded-lg bg-brand px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-brand-hover"
+              className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 text-base font-semibold text-brand shadow-lg shadow-black/10 transition-colors hover:bg-brand-tint"
             >
               Start free
             </a>
             <a
               href="#how-it-works"
-              className="inline-flex items-center justify-center rounded-lg border border-line bg-white px-6 py-3 text-base font-semibold text-ink transition-colors hover:border-brand hover:text-brand"
+              className="inline-flex items-center justify-center rounded-lg border border-white/40 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-white/10"
             >
               See how it works
             </a>
           </div>
 
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
-            <li className="inline-flex items-center gap-2"><CheckIcon className="h-4 w-4 text-brand" /> No hardware to buy</li>
-            <li className="inline-flex items-center gap-2"><CheckIcon className="h-4 w-4 text-brand" /> Works on any phone</li>
-            <li className="inline-flex items-center gap-2"><CheckIcon className="h-4 w-4 text-brand" /> GDPR-ready</li>
+          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/85">
+            <li className="inline-flex items-center gap-2"><CheckIcon className="h-4 w-4 text-brand-accent" /> No hardware to buy</li>
+            <li className="inline-flex items-center gap-2"><CheckIcon className="h-4 w-4 text-brand-accent" /> Works on any phone</li>
+            <li className="inline-flex items-center gap-2"><CheckIcon className="h-4 w-4 text-brand-accent" /> GDPR-ready</li>
           </ul>
         </div>
 
         {/* Product mock — pure CSS so there are no image dependencies */}
         <div className="relative">
-          <div className="absolute -inset-4 -z-10 rounded-3xl brand-gradient opacity-10 blur-2xl" />
-          <div className="mx-auto w-full max-w-md rounded-3xl border border-line bg-white p-5 shadow-2xl shadow-brand/10">
+          {/* Floating live-count badge */}
+          <div className="absolute -bottom-5 -left-4 z-10 hidden items-center gap-2 rounded-xl bg-white px-3 py-2 shadow-xl ring-1 ring-black/5 sm:flex">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-tint text-brand">
+              <UsersIcon className="h-4 w-4" />
+            </span>
+            <div>
+              <p className="text-[10px] font-medium uppercase tracking-wide text-muted">Currently on site</p>
+              <p className="text-sm font-bold text-ink">12 clocked in</p>
+            </div>
+          </div>
+
+          <div className="mx-auto w-full max-w-md rounded-3xl border border-white/15 bg-white p-5 shadow-2xl shadow-black/20 ring-1 ring-black/5">
             <div className="flex items-center justify-between border-b border-line pb-4">
               <div className="flex items-center gap-2">
                 <span className="flex h-9 w-9 items-center justify-center rounded-lg brand-gradient text-white">
@@ -60,7 +83,10 @@ export function Hero() {
                   <p className="text-xs text-muted">Block C · Cork</p>
                 </div>
               </div>
-              <span className="rounded-full bg-brand-tint px-2.5 py-1 text-xs font-semibold text-brand">On site</span>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-tint px-2.5 py-1 text-xs font-semibold text-brand">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-mid" />
+                On site
+              </span>
             </div>
 
             <div className="mt-4 rounded-2xl brand-gradient p-5 text-white">
@@ -79,6 +105,9 @@ export function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Soft transition into the white section below */}
+      <div aria-hidden className="relative h-10 bg-gradient-to-b from-transparent to-white/0" />
     </section>
   );
 }
