@@ -4,16 +4,14 @@ import { useCountry } from "@/components/CountryContext";
 import { getFaqs } from "@/lib/faq";
 
 export function Faq() {
-  const { country } = useCountry();
+  const { country, m } = useCountry();
   const faqs = getFaqs(country);
 
   return (
     <section id="faq" className="mx-auto max-w-3xl scroll-mt-20 px-4 py-20 sm:px-6 lg:py-28">
       <div className="text-center">
-        <p className="text-sm font-semibold uppercase tracking-wide text-brand">FAQ</p>
-        <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-          Questions from the site office
-        </h2>
+        <p className="text-sm font-semibold uppercase tracking-wide text-brand">{m.faq.eyebrow}</p>
+        <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">{m.faq.heading}</h2>
       </div>
 
       <div className="mt-12 divide-y divide-line rounded-2xl border border-line bg-white">

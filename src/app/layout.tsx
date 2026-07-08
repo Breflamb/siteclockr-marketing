@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IE",
-    alternateLocale: ["en_GB"],
+    alternateLocale: ["en_GB", "fr_FR"],
     url: SITE_URL,
     title: `${site.name} — GPS site clock-in & attendance for construction`,
     description: site.description,

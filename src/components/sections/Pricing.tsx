@@ -5,59 +5,40 @@ import { CheckIcon } from "@/components/icons";
 import { useCountry } from "@/components/CountryContext";
 
 export function Pricing() {
-  const { c } = useCountry();
+  const { c, m } = useCountry();
+  const p = m.pricing;
 
   const tiers = [
     {
-      name: "Sole Trader",
-      price: "Free",
-      period: "forever",
+      name: p.soleTrader.name,
+      price: p.soleTrader.price,
+      period: p.soleTrader.period,
       trialNote: "",
-      blurb: "For a one-person operation getting off paper.",
-      features: [
-        "1 login user",
-        "1 active site (switch sites with a 24h cooldown)",
-        "1 worker",
-        "GPS & QR clock-in",
-        "Weekly CSV timesheets",
-      ],
-      cta: "Start free",
+      blurb: p.soleTrader.blurb,
+      features: p.soleTrader.features,
+      cta: p.soleTrader.cta,
       href: site.signupUrl,
       featured: false,
     },
     {
-      name: "Starter",
-      price: "\u20ac29",
-      period: "/ month",
-      trialNote: "21-day free trial \u00b7 no card required",
-      blurb: "For a growing contractor running a few sites.",
-      features: [
-        "Up to 3 active sites",
-        "25 workers included",
-        "+\u20ac1.50/mo per extra worker",
-        c.pricingSafetyLine,
-        "Automatic expiry reminders",
-        "Live on-site view & abuse alerts",
-      ],
-      cta: "Start free trial",
+      name: p.starter.name,
+      price: p.starter.price,
+      period: p.starter.period,
+      trialNote: p.starter.trialNote,
+      blurb: p.starter.blurb,
+      features: p.starter.features(c.pricingSafetyLine),
+      cta: p.starter.cta,
       href: site.signupUrl,
       featured: true,
     },
     {
-      name: "Business",
-      price: "\u20ac59",
-      period: "/ month",
-      trialNote: "21-day free trial \u00b7 no card required",
-      blurb: "For established firms with multiple sites.",
-      features: [
-        "Up to 25 active sites",
-        "50 workers included",
-        "+\u20ac1.50/mo per extra worker",
-        "Everything in Starter",
-        "API keys & webhooks",
-        "Full data backups & audit log",
-      ],
-      cta: "Start free trial",
+      name: p.business.name,
+      price: p.business.price,
+      period: p.business.period,
+      trialNote: p.business.trialNote,
+      blurb: p.business.blurb,
+      features: p.business.features,
+      cta: p.business.cta,
       href: site.signupUrl,
       featured: false,
     },
@@ -67,14 +48,9 @@ export function Pricing() {
     <section id="pricing" className="scroll-mt-20 border-y border-line bg-brand-tint/40">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:py-28">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wide text-brand">Pricing</p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            Start free. Upgrade when the crew grows.
-          </h2>
-          <p className="mt-4 text-lg text-muted">
-            Sole Trader is free forever. Paid plans start at €29/month with a 21-day free trial —
-            no card required — and are billed in euro. Cancel anytime.
-          </p>
+          <p className="text-sm font-semibold uppercase tracking-wide text-brand">{p.eyebrow}</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">{p.heading}</h2>
+          <p className="mt-4 text-lg text-muted">{p.intro}</p>
         </div>
 
         <div className="mt-14 grid items-start gap-6 lg:grid-cols-3">
@@ -87,7 +63,7 @@ export function Pricing() {
             >
               {tier.featured && (
                 <span className="absolute -top-3 left-7 rounded-full brand-gradient px-3 py-1 text-xs font-semibold text-white">
-                  Most popular
+                  {p.mostPopular}
                 </span>
               )}
               <h3 className="text-lg font-semibold text-ink">{tier.name}</h3>
