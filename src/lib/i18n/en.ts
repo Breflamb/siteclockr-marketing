@@ -64,7 +64,7 @@ export const en: Messages = {
       `Set each site's location from your phone's GPS on-site, a pin on the map, or ${locationLookup} — then set the radius. Every clock-in needs a live GPS fix inside the boundary before the time is recorded.`,
     qrTitle: "Printable QR sign-in",
     qrBody:
-      "Generate a QR code for each site and print it or download the PNG with your own title and footer. Workers scan it to land on the right site and clock in.",
+      "Generate a QR code for each site and print it or download the PNG with your own title and footer. Or Share the same clock-in link via WhatsApp, email, SMS, or copy — workers open it on their phone, no app store download.",
     liveTitle: "Live on-site view",
     liveBody:
       "See exactly who is clocked in right now, with a running “currently clocked in” count you can filter by site or name. Fix or add a check-in in seconds.",
@@ -83,7 +83,7 @@ export const en: Messages = {
       "No hardware, no installers, no training days. If your team can send a text, they can use SiteClockr.",
     step1Title: "Set up your sites",
     step1Body: (locationLookup) =>
-      `Add each site and set its location from your GPS on-site, a pin on the map, or ${locationLookup}, then set the geofence radius — or just print a QR code for the gate. Invite your workers by link, no app store download required.`,
+      `Add each site and set its location from your GPS on-site, a pin on the map, or ${locationLookup}, then set the geofence radius — or print a QR for the gate. From admin, Share the site link via WhatsApp, email, SMS, or copy — no app store download required.`,
     step2Title: "The crew clocks in",
     step2Body: (safetyCardShort) =>
       `Workers open SiteClockr on their phone and clock in. Location is verified against the geofence, and their ${safetyCardShort} status is checked on the spot.`,

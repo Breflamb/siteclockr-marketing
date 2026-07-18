@@ -64,7 +64,7 @@ export const fr: Messages = {
       `Définissez l'emplacement de chaque chantier via le GPS sur place, un repère sur la carte ou ${locationLookup}, puis fixez le rayon. Chaque pointage exige une position GPS en direct à l'intérieur du périmètre avant d'enregistrer l'heure.`,
     qrTitle: "QR code imprimable",
     qrBody:
-      "Générez un QR code par chantier, imprimez-le ou téléchargez le PNG avec votre titre et pied de page. Les ouvriers scannent pour arriver sur le bon site et pointer.",
+      "Générez un QR code par chantier, imprimez-le ou téléchargez le PNG avec votre titre et pied de page. Ou Partagez le même lien de pointage par WhatsApp, e-mail, SMS ou copie — les ouvriers l'ouvrent sur leur téléphone, sans store.",
     liveTitle: "Vue en direct sur le chantier",
     liveBody:
       "Voyez exactement qui est pointé en ce moment, avec un compteur « actuellement sur site » filtrable par chantier ou nom. Corrigez ou ajoutez un pointage en quelques secondes.",
@@ -83,7 +83,7 @@ export const fr: Messages = {
       "Pas de matériel, pas d'installateur, pas de journée de formation. Si votre équipe sait envoyer un SMS, elle peut utiliser SiteClockr.",
     step1Title: "Configurez vos chantiers",
     step1Body: (locationLookup) =>
-      `Ajoutez chaque chantier et son emplacement via le GPS sur place, un repère sur la carte ou ${locationLookup}, puis le rayon de géorepérage — ou imprimez simplement un QR code à l'entrée. Invitez vos ouvriers par lien, sans téléchargement depuis un store.`,
+      `Ajoutez chaque chantier et son emplacement via le GPS sur place, un repère sur la carte ou ${locationLookup}, puis le rayon de géorepérage — ou imprimez un QR à l'entrée. Depuis l'admin, Partagez le lien du chantier par WhatsApp, e-mail, SMS ou copie — sans téléchargement depuis un store.`,
     step2Title: "L'équipe pointe",
     step2Body: (safetyCardShort) =>
       `Les ouvriers ouvrent SiteClockr sur leur téléphone et pointent. La position est vérifiée dans le périmètre, et le statut ${safetyCardShort} est contrôlé sur place.`,
