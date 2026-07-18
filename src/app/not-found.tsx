@@ -16,12 +16,12 @@ export default function NotFound() {
         >
           Back to home
         </Link>
-        <a
-          href={`mailto:${site.contactEmail}`}
+        <Link
+          href="/contact/"
           className="inline-flex items-center justify-center rounded-lg border border-line bg-white px-5 py-2.5 text-sm font-semibold text-ink hover:border-brand hover:text-brand"
         >
           Contact us
-        </a>
+        </Link>
       </div>
     </div>
   );

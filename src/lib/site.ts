@@ -8,19 +8,20 @@ export const site = {
   privacyUrl: "https://siteclockr.ie/siteclockr/privacy",
   gdprUrl: "https://siteclockr.ie/siteclockr/gdpr",
   contactEmail: "hello@siteclockr.com",
+  contactUrl: "/contact/",
   /** Paste the content value from Google Search Console → HTML tag method (optional). */
   googleSiteVerification: "cwNPw4-RUsXxJ2NwT-HVfbVkDe4inJLho-sXlmZAzjQ",
   /** Google Analytics 4 measurement ID (G-XXXXXXXXXX). Leave empty to disable. */
-  gaMeasurementId: "G-R685XH6DNG",
+  gaMeasurementId: "G-KRX7F30RRP",
   tagline: "Time & attendance, built for the site.",
   description:
     "SiteClockr is GPS and QR-based time tracking for construction and field teams in Ireland and Britain. Geofenced clock-ins, SafePass and CSCS tracking with expiry reminders, live on-site views, and CSV payroll exports — free to start.",
 } as const;
 
 export const nav = [
-  { label: "Features", href: "#features" },
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Compliance", href: "#compliance" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Features", href: "/#features" },
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "Compliance", href: "/#compliance" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "FAQ", href: "/#faq" },
 ] as const;

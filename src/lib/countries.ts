@@ -1,4 +1,4 @@
-export type CountryCode = "IE" | "GB";
+export type CountryCode = "IE" | "GB" | "FR";
 
 export const DEFAULT_COUNTRY: CountryCode = "IE";
 
@@ -117,6 +117,43 @@ export const COUNTRIES: Record<CountryCode, CountryContent> = {
     faqSafetyA:
       "You store each worker's CSCS card number, expiry and photos of the card. Upload a photo and confirm the details, and SiteClockr emails reminders before it lapses. Manual-handling certificates are tracked the same way.",
   },
+  FR: {
+    code: "FR",
+    label: "France",
+    flag: "🇫🇷",
+    safetyCard: "carte BTP",
+    safetyCardShort: "carte BTP",
+    locationLookup: "un code postal",
+    heroSubhead:
+      "SiteClockr transforme n'importe quel téléphone en pointeuse de chantier. Pointages géolocalisés, QR imprimables, suivi des cartes BTP et habilitations manutention avec rappels d'expiration automatiques — plus une vue en direct sur le chantier et des exports CSV paie.",
+    heroSafetyRowLabel: "Carte BTP",
+    safetyFeatureTitle: "Carte BTP & manutention",
+    safetyFeatureBody:
+      "Stockez numéros, dates d'expiration et photos recto/verso. Photographiez la carte et SiteClockr lit le numéro et la date d'expiration pour vous.",
+    complianceHeading: "Plus jamais de carte BTP expirée sur le chantier",
+    complianceIntro:
+      "SiteClockr tient un registre à jour des qualifications de chaque ouvrier et vous alerte bien avant expiration — pour protéger votre équipe et votre conformité.",
+    compliancePoints: [
+      "Numéro carte BTP, expiration et photos recto/verso par ouvrier",
+      "Photographiez la carte pour lire numéro et date d'expiration",
+      "Certificats de manutention suivis de la même façon",
+      "Rappels e-mail automatiques avant toute expiration",
+      "Voyez d'un coup d'œil qui n'est plus à jour avant l'entrée du chantier",
+      "Chaque pointage est horodaté et vérifié par la position",
+    ],
+    complianceRegisterExpLabel: "Carte BTP exp.",
+    addressFeatureTitle: "Configuration par code postal",
+    addressFeatureBody:
+      "Remplissez l'adresse de l'entreprise et placez le géorepérage d'un chantier directement depuis un code postal — sans manipuler les coordonnées.",
+    themesFeatureBody:
+      "Personnalisez chaque écran avec votre logo et une palette de couleurs pour correspondre à votre entreprise.",
+    pricingSafetyLine: "Suivi carte BTP & manutention",
+    currencyNote:
+      "Tarifs affichés en euro (EUR). Les ouvriers au-delà du quota inclus sont facturés 1,50 € par ouvrier actif et par mois.",
+    faqSafetyQ: "Comment la carte BTP est-elle suivie ?",
+    faqSafetyA:
+      "Vous enregistrez le numéro, la date d'expiration et les photos de la carte BTP de chaque ouvrier. Une photo de la carte lit le numéro et l'expiration pour vous, et SiteClockr envoie des rappels avant expiration. Les certificats de manutention sont suivis de la même manière.",
+  },
 };
 
-export const COUNTRY_LIST: CountryContent[] = [COUNTRIES.IE, COUNTRIES.GB];
+export const COUNTRY_LIST: CountryContent[] = [COUNTRIES.IE, COUNTRIES.GB, COUNTRIES.FR];

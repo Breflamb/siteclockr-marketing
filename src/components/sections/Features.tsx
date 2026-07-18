@@ -11,52 +11,24 @@ import {
 import { useCountry } from "@/components/CountryContext";
 
 export function Features() {
-  const { c } = useCountry();
+  const { c, m } = useCountry();
+  const f = m.features;
 
   const features = [
-    {
-      icon: PinIcon,
-      title: "GPS geofenced clock-in",
-      body: `Set each site's location from your phone's GPS on-site, a pin on the map, or ${c.locationLookup} — then set the radius. Every clock-in needs a live GPS fix inside the boundary before the time is recorded.`,
-    },
-    {
-      icon: QrIcon,
-      title: "Printable QR sign-in",
-      body: "Generate a QR code for each site and print it or download the PNG with your own title and footer. Workers scan it to land on the right site and clock in.",
-    },
-    {
-      icon: UsersIcon,
-      title: "Live on-site view",
-      body: "See exactly who is clocked in right now, with a running \u201ccurrently clocked in\u201d count you can filter by site or name. Fix or add a check-in in seconds.",
-    },
-    {
-      icon: ShieldIcon,
-      title: c.safetyFeatureTitle,
-      body: c.safetyFeatureBody,
-    },
-    {
-      icon: BellIcon,
-      title: "Automatic expiry reminders",
-      body: `Email reminders go out before ${c.safetyCardShort} and manual-handling certs expire \u2014 so nobody turns up to site out of date.`,
-    },
-    {
-      icon: SheetIcon,
-      title: "Weekly timesheets & CSV export",
-      body: "Completed hours roll into Monday-to-Monday timesheets, exported to CSV in your own timezone \u2014 ready to drop into any payroll system.",
-    },
+    { icon: PinIcon, title: f.gpsTitle, body: f.gpsBody(c.locationLookup) },
+    { icon: QrIcon, title: f.qrTitle, body: f.qrBody },
+    { icon: UsersIcon, title: f.liveTitle, body: f.liveBody },
+    { icon: ShieldIcon, title: c.safetyFeatureTitle, body: c.safetyFeatureBody },
+    { icon: BellIcon, title: f.expiryTitle, body: f.expiryBody(c.safetyCardShort) },
+    { icon: SheetIcon, title: f.timesheetsTitle, body: f.timesheetsBody },
   ];
 
   return (
     <section id="features" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-20 sm:px-6 lg:py-28">
       <div className="mx-auto max-w-2xl text-center">
-        <p className="text-sm font-semibold uppercase tracking-wide text-brand">Everything on site</p>
-        <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-          One app for time, attendance and compliance
-        </h2>
-        <p className="mt-4 text-lg text-muted">
-          Stop chasing paper dockets and expired cards. SiteClockr keeps an accurate,
-          verifiable record of who was where — and whether they were qualified to be there.
-        </p>
+        <p className="text-sm font-semibold uppercase tracking-wide text-brand">{f.eyebrow}</p>
+        <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">{f.heading}</h2>
+        <p className="mt-4 text-lg text-muted">{f.intro}</p>
       </div>
 
       <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

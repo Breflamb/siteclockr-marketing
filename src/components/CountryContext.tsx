@@ -8,20 +8,27 @@ import {
   type CountryCode,
   type CountryContent,
 } from "@/lib/countries";
+import { getMessages, HTML_LANG_BY_COUNTRY, type Messages } from "@/lib/i18n";
 
 interface CountryContextValue {
   country: CountryCode;
   setCountry: (code: CountryCode) => void;
   c: CountryContent;
+  m: Messages;
 }
 
 const CountryContext = createContext<CountryContextValue | null>(null);
 
 const STORAGE_KEY = "siteclockr-country";
 
+function DocumentLang({ country }: { country: CountryCode }) {
+  useEffect(() => {
+    document.documentElement.lang = HTML_LANG_BY_COUNTRY[country];
+  }, [country]);
+  return null;
+}
+
 export function CountryProvider({ children }: { children: React.ReactNode }) {
-  // Always start at the default so server-rendered HTML and the first client
-  // render match (no hydration mismatch); refine from storage/locale after mount.
   const [country, setCountryState] = useState<CountryCode>(DEFAULT_COUNTRY);
 
   useEffect(() => {
@@ -45,8 +52,11 @@ export function CountryProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
+  const m = getMessages(country);
+
   return (
-    <CountryContext.Provider value={{ country, setCountry, c: COUNTRIES[country] }}>
+    <CountryContext.Provider value={{ country, setCountry, c: COUNTRIES[country], m }}>
+      <DocumentLang country={country} />
       {children}
     </CountryContext.Provider>
   );
@@ -55,18 +65,22 @@ export function CountryProvider({ children }: { children: React.ReactNode }) {
 export function useCountry(): CountryContextValue {
   const ctx = useContext(CountryContext);
   if (!ctx) {
-    // Fallback for any component rendered outside the provider.
-    return { country: DEFAULT_COUNTRY, setCountry: () => {}, c: COUNTRIES[DEFAULT_COUNTRY] };
+    return {
+      country: DEFAULT_COUNTRY,
+      setCountry: () => {},
+      c: COUNTRIES[DEFAULT_COUNTRY],
+      m: getMessages(DEFAULT_COUNTRY),
+    };
   }
   return ctx;
 }
 
 export function CountrySelect({ className = "" }: { className?: string }) {
-  const { country, setCountry } = useCountry();
+  const { country, setCountry, m } = useCountry();
 
   return (
     <label className={`relative inline-flex items-center ${className}`}>
-      <span className="sr-only">Choose your country</span>
+      <span className="sr-only">{m.header.chooseCountry}</span>
       <svg
         aria-hidden
         className="pointer-events-none absolute left-2.5 h-4 w-4 text-muted"

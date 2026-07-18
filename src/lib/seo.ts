@@ -30,7 +30,7 @@ export function organizationJsonLd() {
     logo: `${SITE_URL}/brand/logo.png`,
     email: site.contactEmail,
     description: site.description,
-    areaServed: ["IE", "GB"],
+    areaServed: ["IE", "GB", "FR"],
     sameAs: ["https://buymeacoffee.com/SiteClockr"],
   };
 }

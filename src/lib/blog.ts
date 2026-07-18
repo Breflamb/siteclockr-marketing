@@ -9,6 +9,43 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "share-site-clock-in-link",
+    title: "Share a site clock-in link from your phone — WhatsApp, email, or SMS",
+    description:
+      "Skip printing a QR when you just need the crew on the right page. From Admin → Sites, share the clock-in URL via WhatsApp, email, SMS, or copy — ready for the gate.",
+    date: "2026-07-18",
+    readMinutes: 4,
+    sections: [
+      {
+        paragraphs: [
+          "A printed QR at the gate is still the best permanent sign-in. But plenty of mornings you just need to get a new starter — or a subbie who arrived without scanning — onto the right clock-in page before the pour starts.",
+          "SiteClockr now lets you share that site link straight from admin on your phone: WhatsApp, email, SMS, or copy. No image attachment to wrestle with — just the URL workers open in the browser.",
+        ],
+      },
+      {
+        heading: "What workers get",
+        paragraphs: [
+          "They receive a normal message with a link. Tap it, and SiteClockr opens the clock-in page for that site — same destination as scanning the QR. No app store download.",
+          "If the site has a geofence, they still need a live GPS fix inside the boundary before the time is recorded. Sharing the link doesn't bypass location checks.",
+        ],
+      },
+      {
+        heading: "How admins share",
+        paragraphs: [
+          "In Admin → Sites, every active site has a Share action next to Preview. Tap it and pick WhatsApp, Email, SMS, or Copy link. On phones that support the system share sheet, that may open first.",
+          "You can also share after Generate in the Site QR Code section — useful when you're already making a printout and want to ping the same URL to a foreman.",
+          "Only active sites show Share. Deactivated sites stay off the list so old jobs don't get sent by mistake.",
+        ],
+      },
+      {
+        heading: "Getting started",
+        paragraphs: [
+          "Log in at siteclockr.ie, open Sites, and try Share on an active site. Sole Trader is free forever for one site and one worker — enough to test with your next crew.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "gps-geofencing-construction",
     title: "How GPS geofencing stops buddy punching on construction sites",
     description:
@@ -110,7 +147,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "3. Invite your workers",
         paragraphs: [
-          "Add staff from the users screen — include SafePass or CSCS details if you're on a paid plan. Share the site link or ask them to scan the QR code on their first day.",
+          "Add staff from the users screen — include SafePass or CSCS details if you're on a paid plan. From Sites, use Share to send the clock-in URL via WhatsApp, email, SMS, or copy — or ask them to scan the QR on their first day.",
           "They clock in from the mobile web app. No download from an app store.",
         ],
       },
