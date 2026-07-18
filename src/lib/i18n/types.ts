@@ -166,4 +166,58 @@ export interface Messages {
     startFree: string;
     bookDemo: string;
   };
+
+  contact: {
+    title: string;
+    intro: string;
+    demoIntro: string;
+    nameLabel: string;
+    emailLabel: string;
+    companyLabel: string;
+    companyPlaceholder: string;
+    phoneLabel: string;
+    phonePlaceholder: string;
+    topicLabel: string;
+    topicOptions: {
+      general: string;
+      demo: string;
+      pricing: string;
+      support: string;
+      other: string;
+    };
+    teamSizeLabel: string;
+    teamSizePlaceholder: string;
+    teamSizeOptions: {
+      unknown: string;
+      solo: string;
+      small: string;
+      medium: string;
+      large: string;
+    };
+    sitesLabel: string;
+    sitesPlaceholder: string;
+    sitesOptions: {
+      unknown: string;
+      one: string;
+      few: string;
+      several: string;
+      many: string;
+    };
+    messageLabel: string;
+    messagePlaceholder: string;
+    demoMessagePlaceholder: string;
+    submit: string;
+    sending: string;
+    successTitle: string;
+    successBody: string;
+    errorGeneric: string;
+    captchaRequired: string;
+    notConfiguredTitle: string;
+    notConfiguredBody: string;
+    emailInstead: string;
+    privacyNote: string;
+    privacyLink: string;
+    demoSubject: string;
+    defaultSubject: string;
+  };
 }

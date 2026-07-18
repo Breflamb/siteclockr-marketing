@@ -45,6 +45,11 @@ export function Footer() {
           <h3 className="text-sm font-semibold text-ink">{f.company}</h3>
           <ul className="mt-4 space-y-3 text-sm">
             <li>
+              <Link href={site.contactUrl} className="text-muted hover:text-brand">
+                {m.header.contact}
+              </Link>
+            </li>
+            <li>
               <a href={site.loginUrl} className="text-muted hover:text-brand">{m.header.login}</a>
             </li>
             <li>

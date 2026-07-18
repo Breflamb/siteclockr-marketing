@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { site } from "@/lib/site";
 import { useCountry } from "@/components/CountryContext";
 
@@ -19,12 +20,12 @@ export function CtaBand() {
           >
             {c.startFree}
           </a>
-          <a
-            href={`mailto:${site.contactEmail}`}
+          <Link
+            href="/contact/?intent=demo"
             className="inline-flex items-center justify-center rounded-lg border border-white/40 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-white/10"
           >
             {c.bookDemo}
-          </a>
+          </Link>
         </div>
       </div>
     </section>
